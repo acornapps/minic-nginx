@@ -1,0 +1,28 @@
+apiVersion: apps/v1beta2
+kind: Deployment
+metadata:
+  name: nginx
+  labels:
+    apps: nginx
+spec:
+  replicas: {{.Replicas}}
+  selector:
+    matchLabels:
+      apps: nginx
+  template:
+    metadata:
+      labels:
+        apps: nginx
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:latest
+        ports:
+        - containerPort: 80
+        resources:
+          limits:
+            cpu: 100m
+            memory: 100Mi
+          requests:
+            cpu: 100m
+            memory: 100Mi

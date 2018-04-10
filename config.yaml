@@ -1,0 +1,9 @@
+kubeVersion: v1.9.4
+ports:
+  - name: k8sapi
+    port: 8443
+  - name: dadhboard
+    port: 30000
+  - name: appservice
+    port: 8080
+description: A basic NGINX HTTP server TEST
